@@ -17,8 +17,8 @@ const posts=[
 ]
 
 app.get('/posts',authenticateToken, (req,res)=>{
-// console.log(req.body.name);
-res.json(posts.filter(post => post.username === req.user))
+ console.log(req.user);
+res.json(posts.filter(posts => posts.username === req.user.name))
 })
 
 app.post('/login',(req,res)=>{
